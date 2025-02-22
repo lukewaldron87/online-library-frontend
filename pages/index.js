@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export async function getServerSideProps() {
   const res = await fetch("http://localhost:8080/books");
   const books = await res.json();
@@ -36,7 +38,12 @@ export default function Home({ books, error }) {
                 className="p-4 border rounded-lg shadow-sm hover:bg-gray-50"
               >
                 <h2 className="text-2xl font-semibold text-gray-800">
-                  {book.title}
+                  <Link
+                    href={`/book/${book.id}`}
+                    className="text-indigo-600 hover:text-indigo-800"
+                  >
+                    {book.title}
+                  </Link>
                 </h2>
                 <p className="text-gray-600 text-lg">Author: {book.author}</p>
                 <p className="text-gray-500">{book.description}</p>
