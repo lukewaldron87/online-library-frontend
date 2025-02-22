@@ -1,2 +1,1 @@
-# online-library-frontend
-Frontend for online library
+This is a starter template for [Learn Next.js](https://nextjs.org/learn).
